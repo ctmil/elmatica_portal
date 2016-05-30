@@ -46,7 +46,7 @@
             <field name="help">We haven't sent you any sales order.</field>
         </record>
 
-        <record id="portal_action_elmatica_invoices" model="ir.actions.act_window">
+        <record id="action_elmatica_portal_invoices" model="ir.actions.act_window">
             <field name="name">Invoices</field>
             <field name="res_model">account.invoice</field>
             <field name="view_mode">tree,form</field>
@@ -67,7 +67,7 @@
         <menuitem name="Sale Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
             action="action_elmatica_orders_portal" sequence="40"/>
         <menuitem name="Customer Invoices" id="portal_elmatica_invoices" parent="portal_elmatica"
-            action="portal_action_elmatica_invoices" sequence="50"/>
+            action="action_elmatica_portal_invoices" sequence="50"/>
 
 
     </data>
