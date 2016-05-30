@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="action_purchase_quotations_portal" model="ir.actions.act_window">
+        <record id="action_elmatica_purchase_quotations_portal" model="ir.actions.act_window">
             <field name="name">Purchase Quotations</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
@@ -13,7 +13,7 @@
             <field name="help">We haven't sent you any purchase order.</field>
         </record>
 
-        <record id="action_purchases_portal" model="ir.actions.act_window">
+        <record id="action_elmatica_purchases_portal" model="ir.actions.act_window">
             <field name="name">Purchases</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
@@ -24,21 +24,12 @@
             <field name="help">We haven't sent you any purchase order.</field>
         </record>
 
-        <!-- record id="action_supplier_voucher_portal" model="ir.actions.act_window">
-            <field name="name">Supplier Payment</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">payment</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[('direction','in',['out'])]</field>
-            <field name="help">We haven't sent you any payment.</field>
-        </record -->
-
         <menuitem name="Elmatica" id="portal_elmatica" parent="portal.portal_menu" sequence="20"/>
 
-        <menuitem name="Purchase Quotations" id="portal_purchase_quotations" parent="portal_suppliers"
-            action="action_purchase_quotations_portal" sequence="9"/>
-        <menuitem name="Purchase Orders" id="portal_purchases" parent="portal_suppliers"
-            action="action_purchases_portal" sequence="10"/>
+        <menuitem name="Purchase Quotations" id="portal_elmatica_purchase_quotations" parent="portal_elmatica"
+            action="action_elmatica_purchase_quotations_portal" sequence="9"/>
+        <menuitem name="Purchase Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
+            action="action_elmatica_purchases_portal" sequence="10"/>
 
 
 
