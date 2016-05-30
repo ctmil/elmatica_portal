@@ -66,7 +66,7 @@
             action="action_elmatica_quotations_portal" sequence="30"/>
         <menuitem name="Sale Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
             action="action_elmatica_orders_portal" sequence="40"/>
-        <menuitem name="Customer Invoices" id="portal_action_elmatica_invoices" parent="portal_elmatica"
+        <menuitem name="Customer Invoices" id="portal_elmatica_invoices" parent="portal_elmatica"
             action="portal_action_elmatica_invoices" sequence="50"/>
 
 
