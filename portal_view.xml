@@ -24,14 +24,50 @@
             <field name="help">We haven't sent you any purchase order.</field>
         </record>
 
+        <record id="action_elmatica_quotations_portal" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','in',('draft','sent','cancel'))]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="help">We haven't sent you any quotation.</field>
+        </record>
+
+        <record id="action_elmatica_orders_portal" model="ir.actions.act_window">
+            <field name="name">Sale Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field>
+            <field name="context">{}</field>
+            <field name="help">We haven't sent you any sales order.</field>
+        </record>
+
+        <record id="portal_action_elmatica_invoices" model="ir.actions.act_window">
+            <field name="name">Invoices</field>
+            <field name="res_model">account.invoice</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type','in',['out_invoice','out_refund'])]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help">We haven't sent you any invoice.</field>
+        </record>
+
         <menuitem name="Elmatica" id="portal_elmatica" parent="portal.portal_menu" sequence="20"/>
 
         <menuitem name="Purchase Quotations" id="portal_elmatica_purchase_quotations" parent="portal_elmatica"
-            action="action_elmatica_purchase_quotations_portal" sequence="9"/>
+            action="action_elmatica_purchase_quotations_portal" sequence="10"/>
         <menuitem name="Purchase Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
-            action="action_elmatica_purchases_portal" sequence="10"/>
-
-
+            action="action_elmatica_purchases_portal" sequence="20"/>
+        <menuitem name="Sale Quotations" id="portal_elmatica_purchase_quotations" parent="portal_elmatica"
+            action="action_elmatica_quotations_portal" sequence="30"/>
+        <menuitem name="Sale Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
+            action="action_elmatica_purchases_portals" sequence="40"/>
+        <menuitem name="Customer Invoices" id="portal_action_elmatica_invoices" parent="portal_elmatica"
+            action="portal_action_elmatica_invoices" sequence="50"/>
 
 
     </data>
