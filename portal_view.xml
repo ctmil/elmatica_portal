@@ -130,7 +130,7 @@
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_portal_quotation_tree"/>
+            <!-- field name="view_id" ref="view_portal_quotation_tree"/ -->
             <field name="domain">[('state', 'in', ('draft', 'sent', 'cancel'))]</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="help">We haven't sent you any quotation.</field>
