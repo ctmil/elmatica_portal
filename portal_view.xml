@@ -140,8 +140,9 @@
             <field name="name">Sale Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="sale.view_sales_order_filter"/>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_portal_quotation_form"/>
             <!-- field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel'))]</field -->
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="context">{}</field>
