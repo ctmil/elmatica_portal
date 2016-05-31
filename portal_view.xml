@@ -168,8 +168,8 @@
             action="action_elmatica_purchases_portal" sequence="20"/>
         <menuitem name="Sale Quotations" id="portal_elmatica_sale_quotes" parent="portal_elmatica" 
             action="action_elmatica_quotations_form_portal" sequence="30"/>
-        <!-- menuitem name="Sale Orders" id="portal_elmatica_sale_orders" parent="portal_elmatica"
-            action="action_elmatica_orders_portal" sequence="40"/ -->
+        <menuitem name="Sale Orders" id="portal_elmatica_sale_orders" parent="portal_elmatica"
+            action="action_elmatica_orders_portal" sequence="40"/>
         <menuitem name="Customer Invoices" id="portal_elmatica_invoices" parent="portal_elmatica"
             action="action_elmatica_portal_invoices" sequence="50"/>
 
