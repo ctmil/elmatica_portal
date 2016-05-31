@@ -2,6 +2,174 @@
 <openerp>
     <data>
 
+        <record id="view_portal_purchase_quotation_tree" model="ir.ui.view">
+            <field name="name">portal.purchase.order.tree</field>
+            <field name="model">purchase.order</field>
+            <field name="priority">4</field>
+            <field name="arch" type="xml">
+                <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='draft';blue:state in ('bid','sent','approved');red:state in ('except_invoice')">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name" string="Quote #"/>
+                    <field name="date_order"/>
+                    <field name="partner_id"/>
+                    <field name="amount_total" sum="Total Tax Included"/>
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_portal_quotation_tree" model="ir.ui.view">
+            <field name="name">portal.sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="priority">4</field>
+            <field name="arch" type="xml">
+                <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="name" string="Quote #"/>
+                    <field name="date_order"/>
+                    <field name="partner_id"/>
+                    <field name="amount_total" sum="Total Tax Included"/>
+                    <field name="state" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_portal_purchase_quotation_form" model="ir.ui.view">
+            <field name="name">portal.purchase.order.form</field>
+            <field name="model">purchase.order</field>
+            <field name="arch" type="xml">
+               <form string="Purchase Order" edit="false">
+                <sheet>
+                    <h1>
+                        <label string="Quote # " attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
+                        <label string="Purchase Order " attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                        <field name="name" class="oe_inline" readonly="1"/>
+                        <field name="state" invisible="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="partner_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="date_order" readonly="1"/>
+                            <field name="customer_ref" readonly="1"/>
+                            <field name="currency_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Order Lines">
+                            <field name="order_line" readonly="1">
+                                <tree string="Purchase Order Lines" >
+                                    <field name="product_id" />
+                                    <field name="name"/>
+                                    <field name="product_qty" />
+                                    <field name="product_uom" />
+                                    <field name="price_unit"/>
+                                    <field name="taxes_id" />
+                                    <field name="price_subtotal"/>
+				    <field name="state" invisible="1" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" name="purchase_total">
+                                <field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"
+					readonly="1"/>
+                                <field name="amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"
+					readobly="1"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="amount_total" />
+                                </div>
+                                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" 
+					widget='monetary' options="{'currency_field': 'currency_id'}" readonly="1"/>
+                            </group>
+                            <div class="oe_clear"/>
+                            <field name="note" class="oe_inline" 
+				readonly="1" placeholder="Terms and conditions..." />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+	</record>
+
+        <record id="view_portal_quotation_form" model="ir.ui.view">
+            <field name="name">portal.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+               <form string="Sales Order" edit="false">
+                <sheet>
+                    <h1>
+                        <label string="Quote # " attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
+                        <label string="Sales Order " attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                        <field name="name" class="oe_inline" readonly="1"/>
+                        <field name="state" invisible="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="partner_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="date_order" readonly="1"/>
+                            <field name="client_order_ref" readonly="1"/>
+                            <field name="currency_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Order Lines">
+                            <field name="order_line" readonly="1">
+                                <tree string="Sales Order Lines" >
+                                    <field name="product_id" />
+                                    <field name="name"/>
+                                    <field name="product_uom_qty" />
+                                    <field name="product_uom" />
+                                    <field name="price_unit"/>
+                                    <field name="tax_id" />
+                                    <field name="discount" />
+                                    <field name="price_subtotal"/>
+				    <field name="state" invisible="1" />
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                <field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"
+					readonly="1"/>
+                                <field name="amount_tax" widget='monetary' options="{'currency_field': 'currency_id'}"
+					readobly="1"/>
+                                <div class="oe_subtotal_footer_separator oe_inline">
+                                    <label for="amount_total" />
+                                </div>
+                                <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" 
+					widget='monetary' options="{'currency_field': 'currency_id'}" readonly="1"/>
+                            </group>
+                            <div class="oe_clear"/>
+                            <field name="note" class="oe_inline" 
+				readonly="1" placeholder="Terms and conditions..." />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_elmatica_purchase_quotations_portal" model="ir.actions.act_window">
+            <field name="name">Purchase Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','in',['draft','sent','bid_received'])]</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
+            <field name="context">{}</field>
+            <!-- field name="search_view_id" ref="purchase.view_purchase_order_filter"/ -->
+            <field name="help">We haven't sent you any purchase order.</field>
+        </record>
+
+
         <record id="view_portal_quotation_tree" model="ir.ui.view">
             <field name="name">portal.sale.order.tree</field>
             <field name="model">sale.order</field>
@@ -84,10 +252,12 @@
             <field name="name">Purchase Quotations</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
+            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="domain">[('state','in',['draft','sent','bid_received'])]</field>
+            <field name="domain">[('state','in',['draft','sent','bid'])]</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="context">{}</field>
+            <field name="view_id" ref="view_portal_purchase_quotation_tree"/>
             <!-- field name="search_view_id" ref="purchase.view_purchase_order_filter"/ -->
             <field name="help">We haven't sent you any purchase order.</field>
         </record>
