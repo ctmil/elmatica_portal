@@ -22,7 +22,7 @@
             <field name="name">portal.sale.order.form</field>
             <field name="model">sale.order</field>
             <field name="arch" type="xml">
-               <form string="Sales Order">
+               <form string="Sales Order" edit="false">
                 <sheet>
                     <h1>
                         <label string="Quote # " attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
