@@ -5,7 +5,8 @@
         <record id="view_portal_purchase_quotation_tree" model="ir.ui.view">
             <field name="name">portal.purchase.order.tree</field>
             <field name="model">purchase.order</field>
-            <field name="priority">4</field>
+            <field name="priority">100</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                 <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='draft';blue:state in ('bid','sent','approved');red:state in ('except_invoice')">
                     <field name="message_unread" invisible="1"/>
@@ -21,7 +22,8 @@
         <record id="view_portal_quotation_tree" model="ir.ui.view">
             <field name="name">portal.sale.order.tree</field>
             <field name="model">sale.order</field>
-            <field name="priority">4</field>
+            <field name="priority">100</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                 <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
                     <field name="message_unread" invisible="1"/>
@@ -37,6 +39,8 @@
         <record id="view_portal_purchase_quotation_form" model="ir.ui.view">
             <field name="name">portal.purchase.order.form</field>
             <field name="model">purchase.order</field>
+	    <field name="priority">100</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                <form string="Purchase Order" edit="false">
                 <sheet>
@@ -98,6 +102,8 @@
         <record id="view_portal_quotation_form" model="ir.ui.view">
             <field name="name">portal.sale.order.form</field>
             <field name="model">sale.order</field>
+	    <field name="priority">100</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                <form string="Sales Order" edit="false">
                 <sheet>
@@ -173,7 +179,8 @@
         <record id="view_portal_quotation_tree" model="ir.ui.view">
             <field name="name">portal.sale.order.tree</field>
             <field name="model">sale.order</field>
-            <field name="priority">4</field>
+            <field name="priority">100</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                 <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
                     <field name="message_unread" invisible="1"/>
@@ -189,6 +196,8 @@
         <record id="view_portal_quotation_form" model="ir.ui.view">
             <field name="name">portal.sale.order.form</field>
             <field name="model">sale.order</field>
+	    <field name="priority">100</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                <form string="Sales Order" edit="false">
                 <sheet>
