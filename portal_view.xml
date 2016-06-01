@@ -230,9 +230,22 @@
             <field name="name">Portal Quotations Form</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
+	    <field name="sequence">20</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_portal_quotation_form"/>
+            <field name="domain">[('state', 'in', ['draft', 'sent'])]</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
+            <field name="help">We haven't sent you any quotation.</field>
+        </record>
+        <record id="action_elmatica_quotations_tree_portal" model="ir.actions.act_window">
+            <field name="name">Portal Quotations Tree</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+	    <field name="sequence">10</field>
+            <field name="view_type">tree</field>
+            <!-- field name="view_mode">tree,form</field -->
+            <field name="view_id" ref="view_portal_quotation_tree"/>
             <field name="domain">[('state', 'in', ['draft', 'sent'])]</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="help">We haven't sent you any quotation.</field>
