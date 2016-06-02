@@ -193,14 +193,14 @@
 	<record model="ir.actions.act_window.view" id="act_portal_purchase_quotation_view">
 	    <field eval="10" name="sequence"/>
 	    <field name="view_mode">tree</field>
-	    <field name="view_id" ref="view_portal_quotation_tree"/>
+	    <field name="view_id" ref="view_portal_purchase_quotation_tree"/>
 	    <field name="act_window_id" ref="action_elmatica_purchase_quotations_portal"/>
 	</record>
 
 	<record model="ir.actions.act_window.view" id="act_portal_quotation_form_view">
 	    <field eval="20" name="sequence"/>
 	    <field name="view_mode">form</field>
-	    <field name="view_id" ref="view_portal_quotation_form"/>
+	    <field name="view_id" ref="view_portal_purchase_quotation_form"/>
 	    <field name="act_window_id" ref="action_elmatica_purchase_quotations_portal"/>
 	</record>
 
