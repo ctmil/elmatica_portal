@@ -2,10 +2,10 @@
 <openerp>
     <data>
 
-        <record id="view_portal_purchase_quotation_tree" model="ir.ui.view">
+        <!-- record id="view_portal_purchase_quotation_tree" model="ir.ui.view">
             <field name="name">portal.purchase.order.tree</field>
             <field name="model">purchase.order</field>
-            <field name="priority">100</field>
+            <field name="sequence">100</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                 <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='draft';blue:state in ('bid','sent','approved');red:state in ('except_invoice')">
@@ -22,7 +22,7 @@
         <record id="view_portal_purchase_quotation_form" model="ir.ui.view">
             <field name="name">portal.purchase.order.form</field>
             <field name="model">purchase.order</field>
-	    <field name="priority">100</field>
+	    <field name="sequence">20</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                <form string="Purchase Order" edit="false">
@@ -80,7 +80,7 @@
                 </div>
                 </form>
             </field>
-	</record>
+	</record -->
 
         <record id="view_portal_quotation_form" model="ir.ui.view">
             <field name="name">portal.sale.order.form</field>
@@ -146,7 +146,7 @@
             </field>
         </record>
 
-        <record id="action_elmatica_purchase_quotations_portal" model="ir.actions.act_window">
+        <!-- record id="action_elmatica_purchase_quotations_portal" model="ir.actions.act_window">
             <field name="name">Purchase Quotations</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
@@ -154,7 +154,6 @@
             <field name="domain">[('state','in',['draft','sent','bid_received'])]</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="context">{}</field>
-            <!-- field name="search_view_id" ref="purchase.view_purchase_order_filter"/ -->
             <field name="help">We haven't sent you any purchase order.</field>
         </record>
 
@@ -181,7 +180,7 @@
 	    <field name="view_mode">tree</field>
 	    <field name="view_id" ref="view_portal_purchase_quotation_tree"/>
 	    <field name="act_window_id" ref="action_elmatica_purchase_quotations_portal"/>
-	</record>
+	</record -->
 
 	<record model="ir.actions.act_window.view" id="act_portal_quotation_form_view">
 	    <field eval="20" name="sequence"/>
@@ -190,7 +189,7 @@
 	    <field name="act_window_id" ref="action_elmatica_purchase_quotations_portal"/>
 	</record>
 
-        <record id="action_elmatica_purchases_portal" model="ir.actions.act_window">
+        <!-- record id="action_elmatica_purchases_portal" model="ir.actions.act_window">
             <field name="name">Purchases</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
@@ -198,9 +197,8 @@
             <field name="domain">[('state','in',['approved','confirmed'])]</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="context">{}</field>
-            <!-- field name="search_view_id" ref="purchase.view_purchase_order_filter"/ -->
             <field name="help">We haven't sent you any purchase order.</field>
-        </record>
+        </record -->
 
 	<!-- record model="ir.actions.act_window" id="action_portal_sale_quotation_seq">
 	    <field name="name">Portal Quotations</field>
@@ -302,10 +300,10 @@
 
         <menuitem name="Elmatica" id="portal_elmatica" parent="portal.portal_menu" sequence="20"/>
 
-        <menuitem name="Purchase Quotations" id="portal_elmatica_purchase_quotations" parent="portal_elmatica"
+        <!-- menuitem name="Purchase Quotations" id="portal_elmatica_purchase_quotations" parent="portal_elmatica"
             action="action_elmatica_purchase_quotations_portal" sequence="10"/>
         <menuitem name="Purchase Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
-            action="action_elmatica_purchases_portal" sequence="20"/>
+            action="action_elmatica_purchases_portal" sequence="20"/ -->
         <menuitem name="Sale Quotations" id="portal_elmatica_sale_quotes" parent="portal_elmatica" 
             action="action_elmatica_quotations_tree_portal" sequence="30"/>
         <menuitem name="Sale Orders" id="portal_elmatica_sale_orders" parent="portal_elmatica"
