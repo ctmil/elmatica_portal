@@ -269,12 +269,25 @@
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_portal_quotation_form"/>
             <field name="domain">[('state', 'not in', ['draft', 'sent', 'cancel'])]</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="context">{}</field>
             <field name="help">We haven't sent you any sales order.</field>
         </record>
+
+	<record model="ir.actions.act_window.view" id="act_portal_saleorder_view">
+	    <field eval="10" name="sequence"/>
+	    <field name="view_mode">tree</field>
+	    <field name="view_id" ref="view_portal_quotation_tree"/>
+	    <field name="act_window_id" ref="action_elmatica_orders_portal"/>
+	</record>
+
+	<record model="ir.actions.act_window.view" id="act_portal_saleorder_form_view">
+	    <field eval="20" name="sequence"/>
+	    <field name="view_mode">form</field>
+	    <field name="view_id" ref="view_portal_quotation_form"/>
+	    <field name="act_window_id" ref="action_elmatica_orders_portal"/>
+	</record>
 
         <record id="action_elmatica_portal_invoices" model="ir.actions.act_window">
             <field name="name">Invoices</field>
