@@ -89,11 +89,11 @@
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
                <form string="Sales Order" edit="false">
-                <sheet>
-		    <header>
+		<header>
                         <button name="order_reset" string="Reset" type="object"/>
                         <button name="order_confirm_decline" string="Confirm/Decline" type="object"/>
-		    </header>
+		</header>
+                <sheet>
                     <h1>
                         <label string="Quote # " attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
                         <label string="Sales Order " attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
