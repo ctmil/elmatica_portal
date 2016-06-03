@@ -101,7 +101,8 @@
                             <field name="partner_id" readonly="1"/>
                         </group>
                         <group>
-                            <field name="date_order" readonly="1"/>
+                            <field name="date_order" readonly="1" widget="date"/>
+                            <field name="user_id" readonly="1"/>
                             <field name="client_order_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"/>
                         </group>
@@ -135,6 +136,14 @@
                             <div class="oe_clear"/>
                             <field name="note" class="oe_inline" 
 				readonly="1" placeholder="Terms and conditions..." />
+                        </page>
+                        <page string="Public Holidays">
+                                <field name="holidays" readonly="1" >
+                                        <tree string="Public Holidays">
+                                                <field name="name" />
+                                                <field name="date" />
+                                        </tree>
+                                </field>
                         </page>
                     </notebook>
                 </sheet>
