@@ -90,6 +90,10 @@
             <field name="arch" type="xml">
                <form string="Sales Order" edit="false">
                 <sheet>
+		    <header>
+                        <button name="order_reset" string="Reset" type="object"/>
+                        <button name="order_confirm_decline" string="Confirm/Decline" type="object"/>
+		    </header>
                     <h1>
                         <label string="Quote # " attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
                         <label string="Sales Order " attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
@@ -123,12 +127,16 @@
                                     <field name="product_id" />
                                     <field name="name"/>
                                     <field name="product_uom_qty" />
-                                    <field name="product_uom" />
                                     <field name="price_unit"/>
                                     <field name="tax_id" />
                                     <field name="discount" />
                                     <field name="price_subtotal"/>
 				    <field name="state" invisible="1" />
+                                    <field name="line_accepted" />
+		                   <button name="line_portal_accept" type="object" help="Accept Product" 
+                	                attrs="{'invisible': ['|',('state', 'not in', ('draft')),('line_accepted','!=','unk')]}" icon="gtk-apply"/>
+	                           <button name="line_portal_reject" type="object" help="Reject Product" 
+	                                attrs="{'invisible': ['|',('state', 'not in', ('draft')),('line_accepted','!=','unk')]}" icon="gtk-cancel"/>
                                 </tree>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
