@@ -97,14 +97,23 @@
                         <field name="state" invisible="1"/>
                     </h1>
                     <group>
-                        <group>
+                        <group colspan="4">
                             <field name="partner_id" readonly="1"/>
                         </group>
                         <group>
-                            <field name="date_order" readonly="1" widget="date"/>
-                            <field name="user_id" readonly="1"/>
-                            <field name="client_order_ref" readonly="1"/>
-                            <field name="currency_id" readonly="1"/>
+				<group string="Dates">
+	                            <field name="date_order" readonly="1" widget="date"/>
+        	                    <field name="requested_delivery_date" readonly="1" widget="date"/>
+                	            <field name="requested_date" readonly="1" widget="date"/>
+				</group>
+				<group string="Order Information">
+	                            <field name="user_id" readonly="1" string="Customer Contact"/>
+        	                    <field name="customer_project" readonly="1"/>
+                	            <field name="client_order_ref" readonly="1"/>
+                        	    <field name="currency_id" readonly="1"/>
+				    <field name="ntty_url" string="Technical Specs" />
+				    <field name="portal_status" />
+				</group>
                         </group>
                     </group>
                     <notebook>
