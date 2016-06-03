@@ -166,11 +166,13 @@
             <field name="arch" type="xml">
                 <tree string="Quotation" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
                     <field name="message_unread" invisible="1"/>
-                    <field name="name" string="Quote #"/>
-                    <field name="date_order"/>
+                    <field name="client_order_ref"/>
+                    <field name="requested_delivery_date"/>
                     <field name="partner_id"/>
-                    <field name="amount_total" sum="Total Tax Included"/>
-                    <field name="state" invisible="1"/>
+                    <field name="order_qty"/>
+                    <field name="amount_total" sum="Total Tax Included" />
+                    <field name="state" />
+                    <field name="name" string="Elmatica SO"/>
                 </tree>
             </field>
         </record>
