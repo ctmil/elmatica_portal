@@ -115,7 +115,8 @@
 				<group string="Order Information">
 	                            <field name="user_id" readonly="1" string="Customer Contact" options="{'no_open': True}"/>
         	                    <field name="customer_project" readonly="1"/>
-                	            <field name="client_order_ref" readonly="1"/>
+                	            <field name="client_order_ref" readonly="1" string="Customer PO"
+					attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                         	    <field name="currency_id" readonly="1" options="{'no_open': True}"/>
 				    <field name="ntty_url" string="Technical Specs" widget="url"/>
 				    <field name="portal_status" />
