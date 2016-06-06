@@ -114,7 +114,7 @@
                 	            <field name="valid_through" readonly="1" widget="date"/>
 				</group>
 				<group string="Order Information">
-	                            <field name="user_id" readonly="1" string="Customer Contact" options="{'no_open': True}"/>
+	                            <!-- field name="user_id" readonly="1" string="Customer Contact" options="{'no_open': True}"/ -->
         	                    <field name="customer_project" readonly="1"/>
                 	            <field name="client_order_ref" readonly="1" string="Customer PO"
 					attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
@@ -172,6 +172,10 @@
                         	        <field name="ticket_ids" />
 	                        </group>
                 	</page>
+                        <page string="Pack Contents">
+                                <field name="pack_contents" readonly="1"/>
+                                <field name="pcb_product_ids" widget="many2many_tags" readonly="1" />
+                        </page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
