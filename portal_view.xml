@@ -110,6 +110,7 @@
 	                            <field name="date_order" readonly="1" widget="date"/>
         	                    <field name="requested_delivery_date" readonly="1" widget="date"/>
                 	            <field name="requested_date" readonly="1" widget="date"/>
+                	            <field name="valid_through" readonly="1" widget="date"/>
 				</group>
 				<group string="Order Information">
 	                            <field name="user_id" readonly="1" string="Customer Contact" options="{'no_open': True}"/>
@@ -154,7 +155,7 @@
                             <field name="note" class="oe_inline" 
 				readonly="1" placeholder="Terms and conditions..." />
                         </page>
-                        <page string="Public Holidays">
+                        <page string="Destination Country holidays">
                                 <field name="holidays" readonly="1" >
                                         <tree string="Public Holidays">
                                                 <field name="name" />
