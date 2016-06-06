@@ -90,7 +90,8 @@
             <field name="arch" type="xml">
                <form string="Sales Order" edit="false">
 		<header>
-                        <button name="order_reset" string="Reset" type="object"/>
+                        <button name="order_reset" string="Reset" type="object"
+				attrs="{'invisible': [('state','not in',['draft','sent'])]}"/>
                         <button name="order_confirm_decline" string="Confirm/Decline" type="object"
 				attrs="{'invisible': [('portal_status','not in',('1'))]}"/>
                         <button name="action_create_ticket" string="Create ticket" type="object"
