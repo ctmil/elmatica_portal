@@ -91,8 +91,11 @@
                <form string="Sales Order" edit="false">
 		<header>
                         <button name="order_reset" string="Reset" type="object"/>
-                        <button name="order_confirm_decline" string="Confirm/Decline" type="object"/>
-                        <button name="action_create_ticket" string="Create ticket" type="object"/>
+                        <button name="order_confirm_decline" string="Confirm/Decline" type="object"
+				attrs="{'invisible': [('portal_status','not in',('1'))]}"/>
+                        <button name="action_create_ticket" string="Create ticket" type="object"
+				attrs="{'invisible': [('portal_status','not in',('1'))]}"/>
+		        <field name="portal_status" widget="statusbar"/>
 		</header>
                 <sheet>
                     <h1>
@@ -120,7 +123,7 @@
 					attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                         	    <field name="currency_id" readonly="1" options="{'no_open': True}"/>
 				    <field name="ntty_url" string="Technical Specs" widget="url"/>
-				    <field name="portal_status" />
+				    <!-- field name="portal_status" /-->
 				    <field name="country_manager" />
 				    <field name="procurement_contact" />
 				</group>
