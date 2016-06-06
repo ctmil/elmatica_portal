@@ -194,6 +194,7 @@
                     <field name="message_unread" invisible="1"/>
                     <field name="customer_project"/>
                     <field name="customer_code"/>
+                    <field name="article_part_number"/>
                     <field name="client_order_ref"/>
                     <field name="requested_delivery_date"/>
                     <field name="partner_id"/>
