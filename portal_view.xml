@@ -113,7 +113,7 @@
                         <group>
 				<group string="Dates">
 	                            <field name="date_order" readonly="1" widget="date"/>
-        	                    <field name="requested_delivery_date" readonly="1" widget="date"/>
+        	                    <!-- field name="requested_delivery_date" readonly="1" widget="date"/ -->
                 	            <field name="requested_date" readonly="1" widget="date"/>
                 	            <field name="valid_through" readonly="1" widget="date"/>
 				</group>
@@ -137,6 +137,7 @@
                                 <tree string="Sale Order Lines" >
                                     <field name="product_id" />
                                     <field name="name"/>
+                                    <field name="supplier_id"/>
                                     <field name="product_uom_qty" />
                                     <field name="price_unit"/>
                                     <field name="price_subtotal"/>
