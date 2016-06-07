@@ -126,7 +126,8 @@
 				    <field name="ntty_url" string="Technical Specs" widget="url"/>
 				    <!-- field name="portal_status" /-->
 				    <field name="country_manager" />
-				    <field name="procurement_contact" />
+				    <field name="procurement_contact" string="Procurement Contact"/>
+				    <field name="technical_contact" string="Technical Contact"/>
 				</group>
                         </group>
                     </group>
