@@ -339,7 +339,7 @@
         <menuitem name="Purchase Quotations" id="portal_elmatica_purchase_quotations" parent="portal_elmatica"
             action="action_elmatica_purchase_quotations_portal" sequence="10"/>
         <menuitem name="Purchase Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
-            action="action_elmatica_purchase_portal" sequence="20"/>
+            action="action_elmatica_purchases_portal" sequence="20"/>
         <menuitem name="Sale Quotations" id="portal_elmatica_sale_quotes" parent="portal_elmatica" 
             action="action_elmatica_quotations_tree_portal" sequence="30"/>
         <menuitem name="Sale Orders" id="portal_elmatica_sale_orders" parent="portal_elmatica"
