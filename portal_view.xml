@@ -224,6 +224,7 @@
                     <field name="article_part_number"/>
                     <field name="client_order_ref"/>
                     <field name="requested_delivery_date"/>
+                    <field name="valid_through"/>
                     <field name="partner_id"/>
                     <field name="order_qty"/>
                     <field name="amount_total" sum="Total Tax Included" />
