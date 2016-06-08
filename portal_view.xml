@@ -125,11 +125,13 @@
                 	            <field name="client_order_ref" readonly="1" string="Customer PO"
 					attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                         	    <field name="currency_id" readonly="1" options="{'no_open': True}"/>
+                        	    <field name="incoterm" readonly="1" options="{'no_open': True}"/>
 				    <field name="ntty_url" string="Technical Specs" widget="url"/>
 				    <!-- field name="portal_status" /-->
 				    <field name="country_manager" />
 				    <field name="procurement_contact" string="Procurement Contact"/>
 				    <field name="technical_contact" string="Technical Contact"/>
+				    <field name="customer_contact" string="Customer Contact"/>
 				</group>
                         </group>
                     </group>
@@ -138,9 +140,10 @@
                             <field name="order_line" readonly="1">
                                 <tree string="Sale Order Lines" >
                                     <field name="product_id" />
-                                    <field name="name"/>
+                                    <!-- field name="name"/ -->
                                     <field name="supplier_id"/>
                                     <field name="product_uom_qty" />
+                                    <field name="leadtime" />
                                     <field name="price_unit"/>
                                     <field name="price_subtotal"/>
 				    <field name="state" invisible="1" />
