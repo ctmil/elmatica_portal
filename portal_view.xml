@@ -141,8 +141,10 @@
                         <page string="Order Lines">
                             <field name="order_line" readonly="1">
                                 <tree string="Sale Order Lines" >
-                                    <field name="product_id" />
-                                    <!-- field name="name"/ -->
+                                    <!-- field name="product_id" />
+                                    <field name="name"/ -->
+                                    <field name="product_owner_code"/>
+                                    <field name="customer_code"/>
                                     <field name="supplier_id"/>
                                     <field name="product_uom_qty" />
                                     <field name="calculated_leadtime" />
