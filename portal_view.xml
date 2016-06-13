@@ -43,6 +43,7 @@
                             <field name="date_order" readonly="1"/>
                             <field name="customer_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"/>
+                            <field name="ntty_url" readonly="1" widget="url" string="Technical Specs"/>
                         </group>
                     </group>
                     <notebook>
