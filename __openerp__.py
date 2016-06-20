@@ -2,7 +2,8 @@
     'name': 'Elmatica - Portal Module',
     'category': 'Sales',
     'version': '0.1',
-    'depends': ['base','elmatica_sales_purchase','portal_purchase','elmatica_tickets'],
+    # 'depends': ['base','elmatica_sales_purchase','portal_purchase','elmatica_tickets'],
+    'depends': ['base','elmatica_sales_purchase','portal_purchase'],
     'data': [
 	'portal_view.xml',
     ],
