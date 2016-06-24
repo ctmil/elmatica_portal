@@ -230,7 +230,7 @@
                     <field name="valid_through"/>
                     <!-- field name="partner_id"/ -->
                     <field name="order_qty"/>
-                    <field name="amount_total" sum="Total Tax Included" />
+                    <!-- field name="amount_total" sum="Total Tax Included" / -->
                     <field name="state" />
                     <field name="name" string="Elmatica SO"/>
                 </tree>
