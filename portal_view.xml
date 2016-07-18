@@ -56,6 +56,12 @@
                                     <field name="price_unit"/>
                                     <field name="taxes_id" />
                                     <field name="price_subtotal"/>
+				    <field name="date_code" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
+				    <field name="units_shipped" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
+				    <field name="weight" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
+				    <field name="collies" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
+				    <field name="batch_number" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
+				    <field name="tracking_number" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
 				    <field name="state" invisible="1" />
                                 </tree>
                             </field>
