@@ -56,12 +56,12 @@
                                     <field name="price_unit"/>
                                     <field name="taxes_id" />
                                     <field name="price_subtotal"/>
-				    <field name="date_code" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
-				    <field name="units_shipped" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
-				    <field name="weight" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
-				    <field name="collies" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
-				    <field name="batch_number" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
-				    <field name="tracking_number" attrs="{'invisible': [('state','in',('draft','sent','bid'))]}" />
+				    <field name="date_code" invisible="context.get('state') != 'approved'" />
+				    <field name="units_shipped" invisible="context.get('state') != 'approved'" />
+				    <field name="weight" invisible="context.get('state') != 'approved'" />
+				    <field name="collies" invisible="context.get('state') != 'approved'" />
+				    <field name="batch_number" invisible="context.get('state') != 'approved'" />
+				    <field name="tracking_number" invisible="context.get('state') != 'approved'" />
 				    <field name="state" invisible="1" />
                                 </tree>
                             </field>
