@@ -56,14 +56,26 @@
                                     <field name="price_unit"/>
                                     <field name="taxes_id" />
                                     <field name="price_subtotal"/>
-				    <field name="date_code" invisible="context.get('state') != 'approved'" />
-				    <field name="units_shipped" invisible="context.get('state') != 'approved'" />
-				    <field name="weight" invisible="context.get('state') != 'approved'" />
-				    <field name="collies" invisible="context.get('state') != 'approved'" />
-				    <field name="batch_number" invisible="context.get('state') != 'approved'" />
-				    <field name="tracking_number" invisible="context.get('state') != 'approved'" />
 				    <field name="state" invisible="1" />
                                 </tree>
+				<form string="Purchase Order Lines">
+				    <group string="Product Information">
+	                                    <field name="product_id" />
+        	                            <field name="name"/>
+                	                    <field name="product_qty" />
+	                                    <field name="price_unit"/>
+        	                            <field name="price_subtotal"/>
+				    </group>
+				    <group string="Shipment Information">
+					    <field name="date_code" />
+					    <field name="units_shipped" />
+					    <field name="weight" />
+					    <field name="collies" />
+					    <field name="batch_number" />
+					    <field name="tracking_number" />
+					    <field name="state" invisible="1" />
+				    </group>
+				</form>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" name="purchase_total">
                                 <field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"
