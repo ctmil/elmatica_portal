@@ -296,6 +296,18 @@
 	    <field name="act_window_id" ref="action_elmatica_quotations_tree_portal"/>
 	</record>
 
+        <record id="action_elmatica_supplierinfo_portal" model="ir.actions.act_window">
+            <field name="name">Portal Product Information Tree</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.supplierinfo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!-- field name="view_id" ref="view_portal_quotation_tree"/>
+            <field name="domain">[('state', 'in', ['draft', 'sent'])]</field -->
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
+            <field name="help">We have no available product information from you.</field>
+        </record>
+
         <record id="action_elmatica_quotations_tree_portal" model="ir.actions.act_window">
             <field name="name">Portal Quotations Tree</field>
             <field name="type">ir.actions.act_window</field>
@@ -367,6 +379,8 @@
             action="action_elmatica_purchase_quotations_portal" sequence="10"/>
         <menuitem name="Purchase Orders" id="portal_elmatica_purchases" parent="portal_elmatica"
             action="action_elmatica_purchases_portal" sequence="20"/>
+	<menuitem name="Product Information" id="portal_elmatica_supplierinfo" parent="portal_elmatica"
+            action="action_elmatica_supplierinfo_portal" sequence="25"/>
         <menuitem name="Sale Quotations" id="portal_elmatica_sale_quotes" parent="portal_elmatica" 
             action="action_elmatica_quotations_tree_portal" sequence="30"/>
         <menuitem name="Sale Orders" id="portal_elmatica_sale_orders" parent="portal_elmatica"
