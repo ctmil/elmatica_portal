@@ -168,6 +168,7 @@
                                     <field name="calculated_leadtime" />
                                     <!-- field name="incoterm" / -->
                                     <field name="price_unit"/>
+				    <field name="calculated_unit_price" string="net Unit Price"/>
                                     <field name="price_subtotal"/>
 				    <field name="state" invisible="1" />
                                     <field name="line_accepted" />
