@@ -81,12 +81,12 @@
         	                            <field name="price_subtotal" readonly="1"/>
 				    </group>
 				    <group string="Shipment Information">
-					    <field name="date_code" />
-					    <field name="units_shipped" />
-					    <field name="weight" />
-					    <field name="collies" />
-					    <field name="batch_number" />
-					    <field name="tracking_number" />
+					    <field name="date_code" readonly="0"/>
+					    <field name="units_shipped" readonly="0"/>
+					    <field name="weight" readonly="0"/>
+					    <field name="collies" readonly="0"/>
+					    <field name="batch_number" readonly="0"/>
+					    <field name="tracking_number" readonly="0"/>
 					    <field name="state" invisible="1" />
 				    </group>
 				</form>
