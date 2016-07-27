@@ -72,7 +72,7 @@
                                     <field name="price_subtotal"/>
 				    <field name="state" invisible="1" />
                                 </tree>
-				<form string="Purchase Order Lines">
+				<form string="Purchase Order Lines" edit="true">
 				    <group string="Product Information">
 	                                    <field name="product_id" readonly="1"  options="{'no_open' : True}" />
         	                            <field name="name"/>
