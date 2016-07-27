@@ -37,12 +37,12 @@
                     </h1>
                     <group>
                         <group>
-                            <field name="partner_id" readonly="1"/>
+                            <field name="partner_id" readonly="1"  options="{'no_open' : True}"/>
                         </group>
                         <group>
                             <field name="date_order" readonly="1"/>
                             <field name="customer_ref" readonly="1"/>
-                            <field name="currency_id" readonly="1"/>
+                            <field name="currency_id" readonly="1"  options="{'no_open' : True}"/>
                         </group>
                     </group>
                     <notebook>
@@ -60,7 +60,7 @@
                                 </tree>
 				<form string="Purchase Order Lines">
 				    <group string="Product Information">
-	                                    <field name="product_id" />
+	                                    <field name="product_id" readonly="1"  options="{'no_open' : True}" />
         	                            <field name="name"/>
                 	                    <field name="product_qty" />
 	                                    <field name="price_unit"/>
