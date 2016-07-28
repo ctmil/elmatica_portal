@@ -72,24 +72,6 @@
                                     <field name="price_subtotal" readonly="1"/>
 				    <field name="state" invisible="1" />
                                 </tree>
-				<form string="Purchase Order Lines" edit="true">
-				    <group string="Product Information">
-	                                    <field name="product_id" readonly="1"  options="{'no_open' : True}" />
-        	                            <field name="name" readonly="1"/>
-                	                    <field name="product_qty" readonly="1"/>
-	                                    <field name="price_unit" readonly="1"/>
-        	                            <field name="price_subtotal" readonly="1"/>
-				    </group>
-				    <group string="Shipment Information">
-					    <field name="date_code" readonly="0"/>
-					    <field name="units_shipped" readonly="0"/>
-					    <field name="weight" readonly="0"/>
-					    <field name="collies" readonly="0"/>
-					    <field name="batch_number" readonly="0"/>
-					    <field name="tracking_number" readonly="0"/>
-					    <field name="state" invisible="1" />
-				    </group>
-				</form>
                             </field>
                             <group class="oe_subtotal_footer oe_right" colspan="2" name="purchase_total">
                                 <field name="amount_untaxed" widget='monetary' options="{'currency_field': 'currency_id'}"
