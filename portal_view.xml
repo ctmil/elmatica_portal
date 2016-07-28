@@ -87,6 +87,16 @@
                             <div class="oe_clear"/>
                             <field name="notes" class="oe_inline" 
 				readonly="1" placeholder="Terms and conditions..." />
+                	</page>
+        	        <page string="Supplier Input" >
+	                         <group string="Supplier Input">
+                                        <field name="date_code" />
+                                        <field name="units_shipped" />
+                                        <field name="weight" />
+                                        <field name="collies" />
+                                        <field name="batch_number" />
+                                        <field name="tracking_number" />
+                                </group>
                         </page>
                     </notebook>
                 </sheet>
