@@ -90,7 +90,7 @@
                 	</page>
         	        <page string="Supplier Input" >
 	                         <group string="Supplier Input">
-                                        <field name="date_code" readonly="0"/>
+                                        <field name="date_code" readonly="0" widget="date"/>
                                         <field name="units_shipped" readonly="0"/>
                                         <field name="weight" readonly="0"/>
                                         <field name="order_collies" readonly="0"/>
