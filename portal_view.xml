@@ -93,7 +93,7 @@
                                         <field name="date_code" readonly="0"/>
                                         <field name="units_shipped" readonly="0"/>
                                         <field name="weight" readonly="0"/>
-                                        <field name="collies" readonly="0"/>
+                                        <field name="order_collies" readonly="0"/>
                                         <field name="batch_number" readonly="0"/>
                                         <field name="tracking_number" readonly="0"/>
                                 </group>
