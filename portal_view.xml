@@ -258,7 +258,7 @@
                     <field name="amount_total" sum="Total Tax Included" 
 			attrs="{'invisible': [('state','in',['draft','sent'])]}"/>
                     <field name="state" />
-                    <!-- field name="portal_accepted_rejected" / -->
+                    <field name="portal_status" />
                     <field name="name" string="Elmatica SO"/>
                 </tree>
             </field>
