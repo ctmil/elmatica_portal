@@ -18,7 +18,7 @@ class account_invoice(models.Model):
 	def _compute_sale_id(self):
 		return_value = None
 		for line in self.invoice_line:
-			if line.order_id:
+			if line.order_sale:
 				return_value = line.order_id.id
 		return return_value 
 
