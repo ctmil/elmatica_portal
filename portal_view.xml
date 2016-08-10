@@ -250,15 +250,15 @@
                     <field name="customer_project"/>
                     <field name="customer_code"/>
                     <field name="article_part_number"/>
-                    <field name="client_order_ref"/>
+                    <field name="client_order_ref" string="PO"/>
                     <field name="requested_delivery_date"/>
                     <field name="valid_through"/>
                     <!-- field name="partner_id"/ -->
                     <field name="order_qty"/>
                     <field name="amount_total" sum="Total Tax Included" 
-			attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
+			attrs="{'invisible': [('state','in',['draft','sent'])]}"/>
                     <field name="state" />
-                    <field name="portal_accepted_rejected" />
+                    <!-- field name="portal_accepted_rejected" / -->
                     <field name="name" string="Elmatica SO"/>
                 </tree>
             </field>
