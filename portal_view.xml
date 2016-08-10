@@ -255,8 +255,31 @@
                     <field name="valid_through"/>
                     <!-- field name="partner_id"/ -->
                     <field name="order_qty"/>
-                    <field name="amount_total" sum="Total Tax Included" 
-			attrs="{'invisible': [('state','in',['draft','sent'])]}"/>
+                    <!-- field name="amount_total" sum="Total Tax Included" 
+			attrs="{'invisible': [('state','in',['draft','sent'])]}"/ -->
+                    <field name="state" />
+                    <field name="portal_status" />
+                    <field name="name" string="Elmatica SO"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_portal_sale_order_tree" model="ir.ui.view">
+            <field name="name">portal.confirmed.sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="sequence">10</field>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
+            <field name="arch" type="xml">
+                <tree string="SaleOrder" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
+                    <field name="message_unread" invisible="1"/>
+                    <field name="customer_project"/>
+                    <field name="customer_code"/>
+                    <field name="article_part_number"/>
+                    <field name="client_order_ref" string="PO"/>
+                    <field name="requested_delivery_date"/>
+                    <field name="valid_through"/>
+                    <!-- field name="partner_id"/ -->
+                    <field name="order_qty"/>
+                    <field name="amount_total" sum="Total Tax Included" />
                     <field name="state" />
                     <field name="portal_status" />
                     <field name="name" string="Elmatica SO"/>
@@ -360,7 +383,7 @@
 	<record model="ir.actions.act_window.view" id="act_portal_saleorder_view">
 	    <field eval="10" name="sequence"/>
 	    <field name="view_mode">tree</field>
-	    <field name="view_id" ref="view_portal_quotation_tree"/>
+	    <field name="view_id" ref="view_portal_sale_order_tree"/>
 	    <field name="act_window_id" ref="action_elmatica_orders_portal"/>
 	</record>
 
