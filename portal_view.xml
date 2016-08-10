@@ -257,6 +257,7 @@
                     <field name="order_qty"/>
                     <!-- field name="amount_total" sum="Total Tax Included" / -->
                     <field name="state" />
+                    <field name="portal_accepted_rejected" />
                     <field name="name" string="Elmatica SO"/>
                 </tree>
             </field>
