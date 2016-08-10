@@ -17,9 +17,9 @@ class account_invoice(models.Model):
 	@api.one
 	def _compute_sale_id(self):
 		return_value = None
-		sale_id = self.env['sale.order'].search([('name','=',self.origin)],limit=1)
-		if sale_id:
-			return_value = sale_id.id
+		for line in invoice_line:
+			if line.order_id:
+				return_value = line.order_id.id
 		return return_value 
 
 	@api.one
