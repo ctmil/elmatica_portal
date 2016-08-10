@@ -19,7 +19,7 @@ class account_invoice(models.Model):
 		return_value = None
 		for line in self.invoice_line:
 			if line.order_sale:
-				return_value = line.order_id.id
+				return_value = line.order_sale.id
 		return return_value 
 
 	@api.one
