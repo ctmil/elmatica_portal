@@ -255,7 +255,8 @@
                     <field name="valid_through"/>
                     <!-- field name="partner_id"/ -->
                     <field name="order_qty"/>
-                    <!-- field name="amount_total" sum="Total Tax Included" / -->
+                    <field name="amount_total" sum="Total Tax Included" 
+			attrs="{'invisible': [('state','not in',('draft','sent'))]}"/>
                     <field name="state" />
                     <field name="portal_accepted_rejected" />
                     <field name="name" string="Elmatica SO"/>
