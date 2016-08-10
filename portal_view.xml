@@ -384,7 +384,7 @@
                     <field name="period_id" string="Period"/>
                     <field name="amount_total" string="Total"/>
                     <field name="state" string="Status"/>
-                    <field name="sale_id" string="Elmatica SO"/>
+                    <field name="sale_order" string="Elmatica SO"/>
                 </tree>
             </field>
         </record>
