@@ -250,14 +250,14 @@
                     <field name="customer_project"/>
                     <field name="customer_code"/>
                     <field name="article_part_number"/>
-                    <field name="client_order_ref" string="PO"/>
+                    <!-- field name="client_order_ref" string="PO"/ -->
                     <field name="requested_delivery_date"/>
                     <field name="valid_through"/>
                     <!-- field name="partner_id"/ -->
-                    <field name="order_qty"/>
+                    <!-- field name="order_qty"/ -->
                     <!-- field name="amount_total" sum="Total Tax Included" 
 			attrs="{'invisible': [('state','in',['draft','sent'])]}"/ -->
-                    <field name="state" />
+                    <!-- field name="state" / -->
                     <field name="portal_status" />
                     <field name="name" string="Elmatica SO"/>
                 </tree>
@@ -274,14 +274,14 @@
                     <field name="customer_project"/>
                     <field name="customer_code"/>
                     <field name="article_part_number"/>
-                    <field name="client_order_ref" string="PO"/>
+                    <!--field name="client_order_ref" string="PO"/ -->
                     <field name="requested_delivery_date"/>
-                    <field name="valid_through"/>
+                    <!-- field name="valid_through"/ -->
                     <!-- field name="partner_id"/ -->
                     <field name="order_qty"/>
                     <field name="amount_total" sum="Total Tax Included" />
                     <field name="state" />
-                    <field name="portal_status" />
+                    <!-- field name="portal_status" / -->
                     <field name="name" string="Elmatica SO"/>
                 </tree>
             </field>
