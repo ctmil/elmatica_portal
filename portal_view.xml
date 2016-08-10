@@ -379,6 +379,7 @@
             <field name="arch" type="xml">
                 <tree string="Your invoices" >
                     <field name="number" string="Invoice number"/>
+                    <field name="customer_po" string="Customer PO"/>
                     <field name="date_due" string="Due date"/>
                     <field name="period_id" string="Period"/>
                     <field name="amount_total" string="Total"/>
