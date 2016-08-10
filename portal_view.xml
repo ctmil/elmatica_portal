@@ -257,7 +257,7 @@
                     <!-- field name="order_qty"/ -->
                     <!-- field name="amount_total" sum="Total Tax Included" 
 			attrs="{'invisible': [('state','in',['draft','sent'])]}"/ -->
-                    <!-- field name="state" / -->
+                    <field name="state" />
                     <field name="portal_status" />
                     <field name="name" string="Elmatica SO"/>
                 </tree>
