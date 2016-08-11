@@ -275,7 +275,7 @@
                     <field name="customer_project"/>
                     <field name="customer_code"/>
                     <field name="article_part_number"/>
-                    <field name="requested_delivery_date"/>
+                    <field name="customer_delivery_date"/>
                     <!-- field name="valid_through"/ -->
                     <!-- field name="partner_id"/ -->
                     <field name="order_qty"/>

@@ -22,3 +22,17 @@ class account_invoice(models.Model):
 		return return_value
 
 	customer_po = fields.Char(string='Customer PO',compute=_compute_customer_po)
+
+class sale_order(models.Model):
+	_inherit = 'sale.order'
+	
+	@api.one
+	def _compute_delivery_date(self):
+		return_value = None
+		if self.picking_ids:
+			for picking in self.picking_ids:
+				if picking.min_date:
+					return_value = picking.min_date
+		return return_value
+
+	customer_delivery_date = fields.Date(string='Delivery Date',compute=_compute_delivery_date)
