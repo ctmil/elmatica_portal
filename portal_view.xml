@@ -271,10 +271,10 @@
             <field name="arch" type="xml">
                 <tree string="SaleOrder" fonts="bold:message_unread==True" colors="grey:state=='cancel';blue:state in ('waiting_date','manual');red:state in ('invoice_except','shipping_except')">
                     <field name="message_unread" invisible="1"/>
+                    <field name="client_order_ref" string="PO"/>
                     <field name="customer_project"/>
                     <field name="customer_code"/>
                     <field name="article_part_number"/>
-                    <!--field name="client_order_ref" string="PO"/ -->
                     <field name="requested_delivery_date"/>
                     <!-- field name="valid_through"/ -->
                     <!-- field name="partner_id"/ -->
