@@ -153,7 +153,7 @@
                         	    <field name="currency_id" readonly="1" options="{'no_open': True}"/>
                         	    <field name="incoterm" readonly="1" options="{'no_open': True}"/>
 				    <field name="ntty_url" string="Technical Specs" widget="url"/>
-				    <!-- field name="portal_status" /-->
+				    <field name="tracking_number" />
 				</group>
 				<group string="Contacts">
 				    <field name="country_manager" />
