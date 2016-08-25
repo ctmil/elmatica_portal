@@ -55,6 +55,9 @@
                         </group>
                         <group>
                             <field name="date_order" readonly="1"/>
+                            <field name="expected_shipping_date" readonly="1"/>
+                            <field name="requested_shipping_date" readonly="1"/>
+                            <field name="shipped_date" readonly="1"/>
                             <field name="customer_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"  options="{'no_open' : True}"/>
 			    <field name="ntty_url" readonly="1" />
@@ -145,6 +148,8 @@
         	                    <!-- field name="requested_delivery_date" readonly="1" widget="date"/ -->
                 	            <field name="requested_date" readonly="1" widget="date"/>
                 	            <field name="valid_through" readonly="1" widget="date"/>
+                	            <field name="confirmed_delivery_date" readonly="1" widget="date"/>
+                	            <field name="delivered_date" readonly="1" widget="date"/>
 				</group>
 				<group string="Order Information">
 	                            <!-- field name="user_id" readonly="1" string="Customer Contact" options="{'no_open': True}"/ -->
