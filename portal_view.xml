@@ -60,7 +60,7 @@
                             <field name="shipped_date" readonly="1"/>
                             <field name="customer_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"  options="{'no_open' : True}"/>
-			    <field name="ntty_url" readonly="1" />
+			    <field name="ntty_url" readonly="1" widget="url"/>
                         </group>
                     </group>
                     <notebook>
