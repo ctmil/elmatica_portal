@@ -14,7 +14,7 @@ _logger = logging.getLogger(__name__)
 class product_supplierinfo(models.Model):
 
 
-class purchase_order(models.Model):
+class product_supplierinfo(models.Model):
 	_inherit = 'product.supplierinfo'
 
 	@api.one
@@ -36,11 +36,45 @@ class purchase_order(models.Model):
                 #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
                 #        return None
 		#for view_id in view_ids:
-		return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
+		:qreturn_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
 			"&view_type=form&model=purchasee.order"
 		self.product_supplierinfo_portal_url = return_url
 
 	product_supplierinfo_portal_url = fields.Char(string='Suppplier Info Portal URL',compute=_compute_product_supplierinfo_portal_url)
+
+class purchase_order(models.Model):
+        _inherit = 'purchase.order'
+
+        @api.one
+        def _compute_purchase_order_portal_url(self):
+                #http://localhost:8069/web?db=elmatica_v1#id=377&view_type=form&model=sale.order&menu_id=471&action=645
+                dbname = self.env.cr.dbname
+                parameter_url = self.env['ir.config_parameter'].sudo().search([('key','=','web.base.url')])
+                if not parameter_url:
+                        raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
+                        return None
+                parameter_url = parameter_url.value
+                #Portal/Elmatica/Sale Orders
+                #menu_item = self.env['ir.ui.menu'].sudo().search([('complete_name','=','Portal/Elmatica/Sale Orders')])
+                #if not menu_item:
+                #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                #        return None                                          portal.purchase.order.form
+                #view_ids = self.env['ir.ui.view'].sudo().search([('name','=','portal.purchase.order.form')])
+                #if not view_ids:
+                #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                #        return None
+                #for view_id in view_ids:
+                action_id = self.env['ir.actions.act_window'].sudo().search([('name','=','portal.purchase.order')])
+                if action_id:
+                        return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
+                                "&view_type=form&model=purchasee.order&action="+str(action_id.id)
+                        self.purchase_order_portal_url = return_url
+                        return
+                raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+
+        purchase_order_portal_url = fields.Char(string='PO Portal URL',compute=_compute_purchase_order_portal_url)
+
+
 
 class account_invoice(models.Model):
 	_inherit = 'account.invoice'
