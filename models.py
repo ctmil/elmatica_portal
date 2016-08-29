@@ -25,8 +25,6 @@ class product_supplierinfo(models.Model):
 		parameter_url = parameter_url.value
                 action_id = self.env['ir.actions.act_window'].sudo().search([('res_model','=','product.supplierinfo'),\
 				('view_type','=','form')])
-		if action_id:
-			self.product_supplierinfo_portal_url = return_url
                 if action_id:
 		#Portal/Elmatica/Sale Orders
 		#menu_item = self.env['ir.ui.menu'].sudo().search([('complete_name','=','Portal/Elmatica/Sale Orders')])
@@ -40,7 +38,7 @@ class product_supplierinfo(models.Model):
 		#for view_id in view_ids:
 			return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
 				"&view_type=form&model=product.supplierinfo&action="+str(action_id.id)
-		self.product_supplierinfo_portal_url = return_url
+			self.product_supplierinfo_portal_url = return_url
 
 	product_supplierinfo_portal_url = fields.Char(string='Suppplier Info Portal URL',compute=_compute_product_supplierinfo_portal_url)
 
