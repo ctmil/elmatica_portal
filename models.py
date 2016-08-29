@@ -26,18 +26,18 @@ class purchase_order(models.Model):
 		#menu_item = self.env['ir.ui.menu'].sudo().search([('complete_name','=','Portal/Elmatica/Sale Orders')])
 		#if not menu_item:
                 #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                #        return None 					      portal.purchase.order.form
+		#view_ids = self.env['ir.ui.view'].sudo().search([('name','=','portal.purchase.order.form')])
+		#if not view_ids:
+                #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
                 #        return None
-		view_ids = self.env['ir.ui.view'].sudo().search([('name','=','portal.purchase.order.form')])
-		if not view_ids:
-                        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
-                        return None
-		for view_id in view_ids:
-			action_id = self.env['ir.actions.act_window'].sudo().search([('view_id','=',view_id.id)])
-			if action_id:
-				return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
-					"&view_type=form&model=purchasee.order&action="+str(action_id.id)
-				self.purchase_order_portal_url = return_url
-				return
+		#for view_id in view_ids:
+		action_id = self.env['ir.actions.act_window'].sudo().search([('name','=','portal.purchase.order')])
+		if action_id:
+			return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
+				"&view_type=form&model=purchasee.order&action="+str(action_id.id)
+			self.purchase_order_portal_url = return_url
+			return
                 raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
 
 	purchase_order_portal_url = fields.Char(string='PO Portal URL',compute=_compute_purchase_order_portal_url)

@@ -312,7 +312,7 @@
 	</record>
 
         <record id="action_elmatica_purchases_portal" model="ir.actions.act_window">
-            <field name="name">Purchases</field>
+            <field name="name">portal.purchase.order</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
             <field name="view_mode">tree,form</field>
