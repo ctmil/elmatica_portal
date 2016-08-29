@@ -380,7 +380,7 @@
 	</record>
 
         <record id="action_elmatica_orders_portal" model="ir.actions.act_window">
-            <field name="name">Sale Orders</field>
+            <field name="name">Portal Sale Orders</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.order</field>
             <field name="view_type">form</field>
