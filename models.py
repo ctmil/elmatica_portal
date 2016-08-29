@@ -17,6 +17,7 @@ class purchase_order(models.Model):
 	@api.one
 	def _compute_purchase_order_portal_url(self):
 		#http://localhost:8069/web?db=elmatica_v1#id=377&view_type=form&model=sale.order&menu_id=471&action=645
+		dbname = self.env.cr.dbname
 		parameter_url = self.env['ir.config_parameter'].sudo().search([('key','=','web.base.url')])
                 if not parameter_url:
                         raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
@@ -34,7 +35,7 @@ class purchase_order(models.Model):
 		#for view_id in view_ids:
 		action_id = self.env['ir.actions.act_window'].sudo().search([('name','=','portal.purchase.order')])
 		if action_id:
-			return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
+			return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
 				"&view_type=form&model=purchasee.order&action="+str(action_id.id)
 			self.purchase_order_portal_url = return_url
 			return
@@ -69,6 +70,7 @@ class sale_order(models.Model):
 	@api.one
 	def _compute_sale_order_portal_url(self):
 		#http://localhost:8069/web?db=elmatica_v1#id=377&view_type=form&model=sale.order&menu_id=471&action=645
+		dbname = self.env.cr.dbname
 		parameter_url = self.env['ir.config_parameter'].sudo().search([('key','=','web.base.url')])
                 if not parameter_url:
                         raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
@@ -86,7 +88,7 @@ class sale_order(models.Model):
 		for view_id in view_ids:
 			action_id = self.env['ir.actions.act_window'].sudo().search([('view_id','=',view_id.id)])
 			if action_id:
-				return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
+				return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
 					"&view_type=form&model=sale.order&action="+str(action_id.id)
 				self.sale_order_portal_url = return_url
 				return
