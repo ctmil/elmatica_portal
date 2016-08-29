@@ -34,7 +34,7 @@ class product_supplierinfo(models.Model):
                 #        return None
 		#for view_id in view_ids:
 		return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
-			"&view_type=form&model=purchasee.order"
+			"&view_type=form&model=product.supplierinfo"
 		self.product_supplierinfo_portal_url = return_url
 
 	product_supplierinfo_portal_url = fields.Char(string='Suppplier Info Portal URL',compute=_compute_product_supplierinfo_portal_url)
@@ -64,7 +64,7 @@ class purchase_order(models.Model):
                 action_id = self.env['ir.actions.act_window'].sudo().search([('name','=','portal.purchase.order')])
                 if action_id:
                         return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
-                                "&view_type=form&model=purchasee.order&action="+str(action_id.id)
+                                "&view_type=form&model=purchase.order&action="+str(action_id.id)
                         self.purchase_order_portal_url = return_url
                         return
                 raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
