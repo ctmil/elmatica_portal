@@ -59,6 +59,7 @@ class sale_order(models.Model):
 				return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
 					"&view_type=form&model=sale.order&action="+str(action_id.id)
 				self.sale_order_portal_url = return_url
+			return None
                 raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
 			
 		
