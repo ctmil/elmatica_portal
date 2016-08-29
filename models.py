@@ -23,7 +23,7 @@ class product_supplierinfo(models.Model):
                         raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
                         return None
 		parameter_url = parameter_url.value
-                action_id = self.env['ir.actions.act_window'].sudo().search([('res_model','=','product.supplierinfo'),\
+                action_ids = self.env['ir.actions.act_window'].sudo().search([('res_model','=','product.supplierinfo'),\
 				('view_type','=','form')])
                 if action_ids:
 		#Portal/Elmatica/Sale Orders
