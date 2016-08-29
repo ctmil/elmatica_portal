@@ -23,6 +23,11 @@ class product_supplierinfo(models.Model):
                         raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
                         return None
 		parameter_url = parameter_url.value
+                action_id = self.env['ir.actions.act_window'].sudo().search([('res_model','=','product.supplierinfo'),\
+				('view_type','=','form')])
+		if action_id:
+			self.product_supplierinfo_portal_url = return_url
+                if action_id:
 		#Portal/Elmatica/Sale Orders
 		#menu_item = self.env['ir.ui.menu'].sudo().search([('complete_name','=','Portal/Elmatica/Sale Orders')])
 		#if not menu_item:
@@ -122,7 +127,6 @@ class sale_order(models.Model):
 					"&view_type=form&model=sale.order&action="+str(action_id.id)
 				self.sale_order_portal_url = return_url
 				return
-                raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
 			
 		
 
