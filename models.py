@@ -114,17 +114,12 @@ class sale_order(models.Model):
 		#if not menu_item:
                 #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
                 #        return None
-		view_ids = self.env['ir.ui.view'].sudo().search([('name','=','portal.sale.order.form')])
-		if not view_ids:
-                        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
-                        return None
-		for view_id in view_ids:
-			action_id = self.env['ir.actions.act_window'].sudo().search([('view_id','=',view_id.id)])
-			if action_id:
-				return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
-					"&view_type=form&model=sale.order&action="+str(action_id.id)
-				self.sale_order_portal_url = return_url
-				return
+		action_id = self.env['ir.actions.act_window'].sudo().search([('res_model','=','sale.order'),\
+				('name','=','Portal Sale Orders')])
+		if action_id:
+			return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
+				"&view_type=form&model=sale.order&action="+str(action_id.id)
+			self.sale_order_portal_url = return_url
 			
 		
 
