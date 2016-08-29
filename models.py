@@ -115,7 +115,7 @@ class sale_order(models.Model):
                 #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
                 #        return None
 		action_id = self.env['ir.actions.act_window'].sudo().search([('res_model','=','sale.order'),\
-				('name','=','Portal Sale Orders')])
+				('name','=','Elmatica sale vouchers')])
 		if action_id:
 			return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
 				"&view_type=form&model=sale.order&action="+str(action_id.id)
