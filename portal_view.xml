@@ -145,7 +145,7 @@
                         </group>
                         <group>
 				<group string="Dates">
-	                            <field name="sale_order_portal_url" readonly="1"/>
+	                            <field name="sale_order_portal_url" readonly="1" widget="url"/>
 	                            <field name="date_order" readonly="1" widget="date"/>
         	                    <!-- field name="requested_delivery_date" readonly="1" widget="date"/ -->
                 	            <field name="requested_date" readonly="1" widget="date"/>
