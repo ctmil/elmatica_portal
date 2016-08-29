@@ -11,6 +11,37 @@ from openerp.fields import Date as newdate
 #Get the logger
 _logger = logging.getLogger(__name__)
 
+class purchase_order(models.Model):
+	_inherit = 'purchase.order'
+
+	@api.one
+	def _compute_purchase_order_portal_url(self):
+		#http://localhost:8069/web?db=elmatica_v1#id=377&view_type=form&model=sale.order&menu_id=471&action=645
+		parameter_url = self.env['ir.config_parameter'].sudo().search([('key','=','web.base.url')])
+                if not parameter_url:
+                        raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
+                        return None
+		parameter_url = parameter_url.value
+		#Portal/Elmatica/Sale Orders
+		#menu_item = self.env['ir.ui.menu'].sudo().search([('complete_name','=','Portal/Elmatica/Sale Orders')])
+		#if not menu_item:
+                #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                #        return None
+		view_ids = self.env['ir.ui.view'].sudo().search([('name','=','portal.purchase.order.form')])
+		if not view_ids:
+                        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                        return None
+		for view_id in view_ids:
+			action_id = self.env['ir.actions.act_window'].sudo().search([('view_id','=',view_id.id)])
+			if action_id:
+				return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
+					"&view_type=form&model=purchasee.order&action="+str(action_id.id)
+				self.purchase_order_portal_url = return_url
+				return
+                raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+
+	purchase_order_portal_url = fields.Char(string='PO Portal URL',compute=_compute_purchase_order_portal_url)
+
 class account_invoice(models.Model):
 	_inherit = 'account.invoice'
 
@@ -38,7 +69,6 @@ class sale_order(models.Model):
 	@api.one
 	def _compute_sale_order_portal_url(self):
 		#http://localhost:8069/web?db=elmatica_v1#id=377&view_type=form&model=sale.order&menu_id=471&action=645
-                import pdb;pdb.set_trace()
 		parameter_url = self.env['ir.config_parameter'].sudo().search([('key','=','web.base.url')])
                 if not parameter_url:
                         raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
@@ -59,7 +89,7 @@ class sale_order(models.Model):
 				return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
 					"&view_type=form&model=sale.order&action="+str(action_id.id)
 				self.sale_order_portal_url = return_url
-			return None
+				return
                 raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
 			
 		

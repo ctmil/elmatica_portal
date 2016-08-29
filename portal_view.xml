@@ -61,6 +61,7 @@
                             <field name="customer_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"  options="{'no_open' : True}"/>
 			    <field name="ntty_url" readonly="1" widget="url"/>
+			    <field name="purchase_order_portal_url" readonly="1" widget="url"/>
                         </group>
                     </group>
                     <notebook>
@@ -454,6 +455,19 @@
             action="action_elmatica_orders_portal" sequence="40"/>
         <menuitem name="Customer Invoices" id="portal_elmatica_invoices" parent="portal_elmatica"
             action="action_elmatica_portal_invoices" sequence="50"/>
+
+
+        <record model="ir.ui.view" id="view_sale_order_form_urls">
+            <field name="name">sale.order.form.portal.urls</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+		<field name="date_order">
+			<field name="sale_order_portal_url" widget="url" />
+		</field>
+            </field>
+        </record>
+
 
 
     </data>
