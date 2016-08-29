@@ -12,9 +12,6 @@ from openerp.fields import Date as newdate
 _logger = logging.getLogger(__name__)
 
 class product_supplierinfo(models.Model):
-
-
-class product_supplierinfo(models.Model):
 	_inherit = 'product.supplierinfo'
 
 	@api.one
@@ -36,7 +33,7 @@ class product_supplierinfo(models.Model):
                 #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
                 #        return None
 		#for view_id in view_ids:
-		:qreturn_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
+		return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
 			"&view_type=form&model=purchasee.order"
 		self.product_supplierinfo_portal_url = return_url
 
