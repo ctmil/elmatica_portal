@@ -38,8 +38,8 @@ class product_supplierinfo(models.Model):
                 #        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
                 #        return None
 		#for view_id in view_ids:
-		return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
-			"&view_type=form&model=product.supplierinfo"
+			return_url = parameter_url + '/web?='+dbname+'#id'+str(self.id)+\
+				"&view_type=form&model=product.supplierinfo&action="+str(action_id.id)
 		self.product_supplierinfo_portal_url = return_url
 
 	product_supplierinfo_portal_url = fields.Char(string='Suppplier Info Portal URL',compute=_compute_product_supplierinfo_portal_url)
