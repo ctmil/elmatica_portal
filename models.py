@@ -35,4 +35,31 @@ class sale_order(models.Model):
 					return_value = picking.min_date
 		return return_value
 
+	@api.one
+	def _compute_sale_order_portal_url(self):
+		#http://localhost:8069/web?db=elmatica_v1#id=377&view_type=form&model=sale.order&menu_id=471&action=645
+                parameter_url = self.env['ir.config_parameter'].sudo().search([('key','=','web.base.url')])
+                if not parameter_url:
+                        raise osv.except_osv(('Error'), ('portal_url parameter missing!!!'))
+                        return None
+		parameter_url = parameter_url.value
+		#Portal/Elmatica/Sale Orders
+		menu_item = self.env['ir.ui.menu'].sudo().search([('complete_name','=','Portal/Elmatica/Sale Orders')])
+		if not menu_item:
+                        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                        return None
+		view_id = self.env['ir.ui.view'].sudo().search([('name','=','portal.sale.order.form')])
+		if not view_id:
+                        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                        return None
+		action_id = self.env['ir.actions.act_window'].sudo().search([('view_id','=',view_id.id)])
+		if not action_id:
+                        raise osv.except_osv(('Error'), ('elmatica_portal module is not  installed!!!'))
+                        return None
+		return_url = parameter_url + '/web?=elmatica_v1#id'+str(self.id)+\
+				"&view_type=form&model=sale.order%menu_id="+str(menu_item.id)+"&action="+str(action_id.id)
+		self.sale_order_portal_url = return_url
+		
+
 	customer_delivery_date = fields.Date(string='Delivery Date',compute=_compute_delivery_date)
+	sale_order_portal_url = fields.Char(string='SO Portal URL',compute=_compute_sale_order_portal_url)
