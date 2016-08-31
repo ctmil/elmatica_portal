@@ -104,6 +104,11 @@
                                         <field name="tracking_number" readonly="0"/>
                                 </group>
                         </page>
+			<page string="Tickets">
+				<group>
+					<field name="ticket_ids" />
+				</group>
+			</page>
                     </notebook>
                 </sheet>
                 <div class="oe_chatter">
