@@ -45,6 +45,11 @@ class product_supplierinfo(models.Model):
 class purchase_order(models.Model):
         _inherit = 'purchase.order'
 
+	@api.multi
+	def create_po_portal_ticket(self):
+		import pdb;pdb.set_trace()
+		return None
+
         @api.one
         def _compute_purchase_order_portal_url(self):
                 #http://localhost:8069/web?db=elmatica_v1#id=377&view_type=form&model=sale.order&menu_id=471&action=645

@@ -41,6 +41,7 @@
             <field name="arch" type="xml">
                <form string="Purchase Order" edit="true">
 		<header>
+			<button name="action_create_ticket" type="object" string="Create Ticket" />
                         <field name="state" widget="statusbar" readonly="1"/>
 		</header>
                 <sheet>
