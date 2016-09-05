@@ -168,14 +168,14 @@
 					attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                         	    <field name="currency_id" readonly="1" options="{'no_open': True}"/>
                         	    <field name="incoterm" readonly="1" options="{'no_open': True}"/>
-				    <field name="ntty_url" string="Technical Specs" widget="url"/>
-				    <field name="tracking_number" />
+				    <field name="ntty_url" string="Technical Specs" widget="url" readonly="1"/>
+				    <field name="tracking_number" readonly="1"/>
 				</group>
 				<group string="Contacts">
-				    <field name="country_manager" />
-				    <field name="procurement_contact" string="Procurement Contact"/>
-				    <field name="technical_contact" string="Technical Contact"/>
-				    <field name="customer_contact" string="Customer Contact"/>
+				    <field name="country_manager" readonly="1"/>
+				    <field name="procurement_contact" string="Procurement Contact" readonly="1"/>
+				    <field name="technical_contact" string="Technical Contact" readonly="1"/>
+				    <field name="customer_contact" string="Customer Contact" readonly="1"/>
 				</group>
                         </group>
                     </group>
