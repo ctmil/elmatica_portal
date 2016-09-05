@@ -125,7 +125,7 @@
 	    <field name="sequence">10</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="arch" type="xml">
-               <form string="Sale Order" edit="false">
+               <form string="Sale Order" edit="true">
 		<header>
                         <button name="order_reset" string="Reset" type="object"
 				attrs="{'invisible': [('state','not in',['draft','sent'])]}"/>
@@ -147,6 +147,8 @@
                     <group>
                         <group colspan="4">
                             <field name="partner_id" readonly="1"
+				options="{'no_open': True}"/>
+                            <field name="original_contact" readonly="1"
 				options="{'no_open': True}"/>
                         </group>
                         <group>
@@ -248,6 +250,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">purchase.order</field>
             <field name="view_mode">tree,form</field>
+	    <field name="view_id"></field>
             <field name="domain">[('state','in',['draft','sent','bid_received'])]</field>
             <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
             <field name="context">{}</field>
