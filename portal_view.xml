@@ -59,6 +59,7 @@
                             <field name="expected_shipping_date" readonly="1"/>
                             <field name="requested_shipping_date" readonly="1"/>
                             <field name="shipped_date" readonly="1"/>
+                            <field name="confirmed_date" />
                             <field name="customer_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"  options="{'no_open' : True}"/>
 			    <field name="ntty_url" readonly="1" widget="url"/>
@@ -148,8 +149,6 @@
                         <group colspan="4">
                             <field name="partner_id" readonly="1"
 				options="{'no_open': True}"/>
-                            <field name="original_contact" readonly="1"
-				options="{'no_open': True}"/>
                         </group>
                         <group>
 				<group string="Dates">
@@ -175,7 +174,7 @@
 				    <field name="country_manager" readonly="1"/>
 				    <field name="procurement_contact" string="Procurement Contact" readonly="1"/>
 				    <field name="technical_contact" string="Technical Contact" readonly="1"/>
-				    <field name="customer_contact" string="Customer Contact" readonly="1"/>
+                            	    <field name="original_contact" readonly="1" options="{'no_open': True}"/>
 				</group>
                         </group>
                     </group>
