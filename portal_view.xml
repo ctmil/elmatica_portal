@@ -63,7 +63,7 @@
                             <field name="customer_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"  options="{'no_open' : True}"/>
 			    <field name="ntty_url" readonly="1" widget="url"/>
-			    <field name="purchase_order_portal_url" readonly="1" widget="url"/>
+			    <!-- field name="purchase_order_portal_url" readonly="1" widget="url"/ -->
                         </group>
                     </group>
                     <notebook>
@@ -152,7 +152,7 @@
                         </group>
                         <group>
 				<group string="Dates">
-	                            <field name="sale_order_portal_url" readonly="1" widget="url"/>
+	                            <!-- field name="sale_order_portal_url" readonly="1" widget="url"/ -->
 	                            <field name="date_order" readonly="1" widget="date"/>
         	                    <!-- field name="requested_delivery_date" readonly="1" widget="date"/ -->
                 	            <field name="requested_date" readonly="1" widget="date"/>
