@@ -63,6 +63,7 @@
                             <field name="customer_ref" readonly="1"/>
                             <field name="currency_id" readonly="1"  options="{'no_open' : True}"/>
 			    <field name="ntty_url" readonly="1" widget="url"/>
+			    <field name="technical_specs" readonly="1" widget="url"/>
 			    <!-- field name="purchase_order_portal_url" readonly="1" widget="url"/ -->
                         </group>
                     </group>
