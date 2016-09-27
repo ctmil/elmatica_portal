@@ -167,7 +167,8 @@
                 	            <field name="client_order_ref" readonly="1" string="Customer PO"
 					attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                         	    <field name="currency_id" readonly="1" options="{'no_open': True}"/>
-                        	    <field name="portal_incoterm" readonly="1" options="{'no_open': True}"/>
+                        	    <field name="portal_incoterm" readonly="1" options="{'no_open': True}"
+						string="Incoterm" />
 				    <field name="ntty_url" string="Technical Specs" widget="url" readonly="1"/>
 				    <field name="tracking_number" readonly="1"/>
 				</group>
