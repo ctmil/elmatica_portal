@@ -497,7 +497,7 @@
 	    <field name="groups_id" eval="[(6, 0, [ref('base.group_portal') ])]"/>
 	    <field name="arch" type="xml">
         	<field name="pricelist_ids" position="attributes">
-	            <attribute name="attrs">{'readonly':[('price_status','not in',['6'])]}</attribute>
+	            <attribute name="attrs">{'readonly':[('price_status','not in',('6'))]}</attribute>
         	</field>
 	    </field>
 	</record>
